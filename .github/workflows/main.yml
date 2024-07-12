@@ -17,3 +17,6 @@ jobs:
 
       - name: Install dependencies
         uses: composer install 
+
+      - name: Run Server
+        uses: php artisan serve
