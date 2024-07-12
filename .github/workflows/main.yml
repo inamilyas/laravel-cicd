@@ -36,7 +36,7 @@ jobs:
     needs: laravel-tests
     if: github.ref == 'refs/heads/main'
     steps:
-      - name: Deploy on server
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Deploy on server
@@ -47,7 +47,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /var/www/ylaravel-project/
+            cd /var/www/laravel-project/
             git pull origin main
             git status
             composer update
